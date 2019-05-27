@@ -6,7 +6,9 @@ class Signup extends React.Component {
       super(props)
       this.state= {
          username:'' ,
-         password:''
+         email:'' ,
+         password:'' ,
+         confirmpass:''
       }
    }
    handleChange(e) {
@@ -15,7 +17,7 @@ class Signup extends React.Component {
    }
    render() {
       return (
-         <div className='App'>
+         <div className='signup-page'>
             <div className='container'>
                <img className='logo' src={logo}/>
                <div className='input-container'>
@@ -26,6 +28,17 @@ class Signup extends React.Component {
                      className='user-pass' 
                      placeholder='Username'
                      value={this.state.username}
+                     onChange={(e)=> this.handleChange(e)}
+                  />
+               </div>
+               <div className='input-container'>
+                  <i className="fa fa-envelope">
+                  </i>
+                  <input 
+                     name='email'
+                     className='user-pass' 
+                     placeholder='Email'
+                     value={this.state.email}
                      onChange={(e)=> this.handleChange(e)}
                   />
                </div>
@@ -41,14 +54,23 @@ class Signup extends React.Component {
                      onChange={(e)=> this.handleChange(e)}
                   />
                </div>
+               <div className='input-container'>
+                  <i className="fa fa-lock">
+                  </i>
+                  <input
+                     type='password'
+                     name='confirmpass'
+                     className='user-pass'
+                     placeholder='Confirm Password'
+                     value={this.state.confirmpass}
+                     onChange={(e)=> this.handleChange(e)}
+                  />
+               </div>
                <button type='submit' className='btn'>
-                  GET STARTED
+                  sign up
                </button>
-               <p className='fg-pass'> 
-                  Forgot Password? 
-               </p>
-               <p className='sign-up'>
-                  create account
+               <p className='fg-pass'>
+                   I am already member
                </p>
             </div>
          </div>

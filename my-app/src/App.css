@@ -10,9 +10,9 @@ input:-webkit-autofill:active {
    transition-delay: 9999s;
 }
 
-.App {
+.login-page {
    text-align: center;
-   background-image: url('./images/login-background.jpg');
+   background: url('./images/login-background.jpg');
    background-size: cover;
    min-height: 100vh;
    display: flex;
@@ -20,6 +20,18 @@ input:-webkit-autofill:active {
    justify-content: center;
    align-items: center;
 }
+
+.signup-page {
+   text-align: center;
+   background: url('./images/signup-background.jpg');
+   background-size: cover;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -89,6 +101,8 @@ input:-webkit-autofill:active {
    font-family: 'Mukta', sans-serif;
    font-weight: 300;
    width: 100%;
+   text-transform: uppercase;
+   outline: none;
 }
 
 .fg-pass {

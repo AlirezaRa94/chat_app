@@ -15,7 +15,7 @@ class Login extends React.Component {
    }
    render() {
       return (
-         <div className='App'>
+         <div className='login-page'>
             <div className='container'>
                <img className='logo' src={logo}/>
                <div className='input-container'>
@@ -48,7 +48,7 @@ class Login extends React.Component {
                   Forgot Password? 
                </p>
                <p className='sign-up'>
-                  create account
+                  create an account
                </p>
             </div>
          </div>
