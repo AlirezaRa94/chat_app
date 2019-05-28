@@ -1,14 +1,11 @@
-import React from 'react';
-import Signup from './Components/Sign-up';
-import './App.css';
+import React from 'react'
+import './App.css'
+import Signup from './Components/Signup'
 
-function App() {
+function App () {
   return (
-    <div>
-      <Signup />
-    </div>
-  );
+    <Signup />
+  )
 }
 
-export default App;
-
+export default App

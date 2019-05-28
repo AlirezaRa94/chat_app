@@ -1,25 +1,23 @@
 import React from 'react'
-import logo from '../images/icon.png'
+import logo from '../Images/icon.png'
 
-class Login extends React.Component {
+class Signup extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
       username: '',
+      email: '',
       password: '',
-      clicked: false
+      confirmpass: ''
     }
   }
   handleChange (e) {
     var name = e.target.name
     this.setState({ [name]: e.target.value })
   }
-  handleClick () {
-    this.setState({ clicked: !this.state.clicked })
-  }
   render () {
     return (
-      <div className='login-page'>
+      <div className='signup-page'>
         <div className='container'>
           <img className='logo' src={logo} />
           <div className='input-container'>
@@ -29,6 +27,16 @@ class Login extends React.Component {
               className='user-pass'
               placeholder='Username'
               value={this.state.username}
+              onChange={(e) => this.handleChange(e)}
+            />
+          </div>
+          <div className='input-container'>
+            <i className='fa fa-envelope' />
+            <input
+              name='email'
+              className='user-pass'
+              placeholder='Email'
+              value={this.state.email}
               onChange={(e) => this.handleChange(e)}
             />
           </div>
@@ -43,25 +51,25 @@ class Login extends React.Component {
               onChange={(e) => this.handleChange(e)}
             />
           </div>
-          <button
-            type='submit'
-            className='btn'
-            onClick={() => this.handleClick()}
-          >
-            GET STARTED
+          <div className='input-container'>
+            <i className='fa fa-lock' />
+            <input
+              type='password'
+              name='confirmpass'
+              className='user-pass'
+              placeholder='Confirm Password'
+              value={this.state.confirmpass}
+              onChange={(e) => this.handleChange(e)}
+            />
+            {this.state.password !== this.state.confirmpass &&
+              <p> Those passsword didn't match.Try again.</p>
+            }
+          </div>
+          <button type='submit' className='btn'>
+                  sign up
           </button>
-          {/* {this.state.clicked === true &&
-          <p>clicked</p>
-          } */}
-          {/* {this.state.clicked === true
-            ? <p>true</p>
-            : <p>false</p>
-          } */}
           <p className='fg-pass'>
-                  Forgot Password?
-          </p>
-          <p className='sign-up'>
-                  create an account
+                   I am already member
           </p>
         </div>
       </div>
@@ -69,4 +77,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login
+export default Signup
