@@ -1,5 +1,7 @@
 import React from 'react'
 import logo from '../Images/icon.png'
+import validate from '../Validation/ValidateFunction'
+import { Link } from 'react-router-dom'
 
 class Signup extends React.Component {
   constructor (props) {
@@ -8,12 +10,35 @@ class Signup extends React.Component {
       username: '',
       email: '',
       password: '',
-      confirmpass: ''
+      confirmpass: '',
+      error: {
+        username: null,
+        email: null,
+        password: null,
+        confirmpass: null
+      }
     }
   }
   handleChange (e) {
+    console.log('value', e.target.value)
     var name = e.target.name
     this.setState({ [name]: e.target.value })
+  }
+  handleClick () {
+    var usernameError = validate('username', this.state.username)
+    var emailError = validate('email', this.state.email)
+    var passwordError = validate('password', this.state.password)
+    if (this.state.confirmpass !== this.state.password) {
+      var confirmpassError = 'Password and confirm password does not match.'
+    } else {
+      confirmpassError = null
+    }
+    var error = {}
+    error.username = usernameError
+    error.email = emailError
+    error.password = passwordError
+    error.confirmpass = confirmpassError
+    this.setState({ error })
   }
   render () {
     return (
@@ -30,6 +55,11 @@ class Signup extends React.Component {
               onChange={(e) => this.handleChange(e)}
             />
           </div>
+          {this.state.error.username !== null &&
+            <p className='error' >
+              {this.state.error.username}
+            </p>
+          }
           <div className='input-container'>
             <i className='fa fa-envelope' />
             <input
@@ -40,6 +70,11 @@ class Signup extends React.Component {
               onChange={(e) => this.handleChange(e)}
             />
           </div>
+          {this.state.error.email !== null &&
+            <p className='error' >
+              {this.state.error.email}
+            </p>
+          }
           <div className='input-container'>
             <i className='fa fa-lock' />
             <input
@@ -51,6 +86,11 @@ class Signup extends React.Component {
               onChange={(e) => this.handleChange(e)}
             />
           </div>
+          {this.state.error.password !== null &&
+            <p className='error' >
+              {this.state.error.password}
+            </p>
+          }
           <div className='input-container'>
             <i className='fa fa-lock' />
             <input
@@ -61,16 +101,22 @@ class Signup extends React.Component {
               value={this.state.confirmpass}
               onChange={(e) => this.handleChange(e)}
             />
-            {this.state.password !== this.state.confirmpass &&
-              <p> Those passsword didn't match.Try again.</p>
-            }
           </div>
-          <button type='submit' className='btn'>
-                  sign up
+          {this.state.error.confirmpass !== null &&
+            <p className='error' >
+              {this.state.error.confirmpass}
+            </p>
+          }
+          <button
+            type='submit'
+            className='btn'
+            onClick={() => this.handleClick()}
+          >
+            sign up
           </button>
-          <p className='fg-pass'>
-                   I am already member
-          </p>
+          <Link className='link' to='./'>
+            I am already member
+          </Link>
         </div>
       </div>
     )

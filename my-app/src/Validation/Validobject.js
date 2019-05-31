@@ -1,15 +1,17 @@
-var ValidObject= {
+var ValidObject = {
   username: {
     presence: {
+      allowEmpty: false,
       message: '^Please enter your username.'
     },
     length: {
-      minimum: 4,
+      minimum: 3,
       message: '^Your username must be at least 3 characters.'
     }
   },
   email: {
     presence: {
+      allowEmpty: false,
       message: '^Please enter your email.'
     },
     email: {
@@ -18,11 +20,14 @@ var ValidObject= {
   },
   password: {
     presence: {
+      allowEmpty: false,
       message: '^Please enter your password.'
     },
     length: {
-      minimum: 4,
-      message: '^Your password must be at least 5 characters.'
+      minimum: 6,
+      message: '^Your password must be at least 6 characters.'
     }
   }
 }
+
+export default ValidObject

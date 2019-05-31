@@ -1,5 +1,7 @@
 import React from 'react'
-import logo from '../images/icon.png'
+import logo from '../Images/icon.png'
+import validate from '../Validation/ValidateFunction'
+import { Link } from 'react-router-dom'
 
 class Login extends React.Component {
   constructor (props) {
@@ -7,7 +9,10 @@ class Login extends React.Component {
     this.state = {
       username: '',
       password: '',
-      clicked: false
+      error: {
+        username: null,
+        password: null
+      }
     }
   }
   handleChange (e) {
@@ -15,7 +20,12 @@ class Login extends React.Component {
     this.setState({ [name]: e.target.value })
   }
   handleClick () {
-    this.setState({ clicked: !this.state.clicked })
+    var usernameError = validate('username', this.state.username)
+    var passwordError = validate('password', this.state.password)
+    var error = {}
+    error.username = usernameError
+    error.password = passwordError
+    this.setState({ error })
   }
   render () {
     return (
@@ -32,6 +42,11 @@ class Login extends React.Component {
               onChange={(e) => this.handleChange(e)}
             />
           </div>
+          {this.state.error.username !== null &&
+            <p className='error' >
+              {this.state.error.username}
+            </p>
+          }
           <div className='input-container'>
             <i className='fa fa-lock' />
             <input
@@ -43,6 +58,11 @@ class Login extends React.Component {
               onChange={(e) => this.handleChange(e)}
             />
           </div>
+          {this.state.error.password !== null &&
+            <p className='error'>
+              {this.state.error.password}
+            </p>
+          }
           <button
             type='submit'
             className='btn'
@@ -50,19 +70,12 @@ class Login extends React.Component {
           >
             GET STARTED
           </button>
-          {/* {this.state.clicked === true &&
-          <p>clicked</p>
-          } */}
-          {/* {this.state.clicked === true
-            ? <p>true</p>
-            : <p>false</p>
-          } */}
-          <p className='fg-pass'>
-                  Forgot Password?
+          <p className='link'>
+            Forgot Password?
           </p>
-          <p className='sign-up'>
-                  create an account
-          </p>
+          <Link className='sign-up' to='./signup'>
+            create an account
+          </Link>
         </div>
       </div>
     )

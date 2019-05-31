@@ -12,7 +12,7 @@ input:-webkit-autofill:active {
 
 .login-page {
    text-align: center;
-   background: url('./images/login-background.jpg');
+   background: url('./Images/login-background.jpg');
    background-size: cover;
    min-height: 100vh;
    display: flex;
@@ -23,7 +23,7 @@ input:-webkit-autofill:active {
 
 .signup-page {
    text-align: center;
-   background: url('./images/signup-background.jpg');
+   background: url('./Images/signup-background.jpg');
    background-size: cover;
    min-height: 100vh;
    display: flex;
@@ -105,7 +105,7 @@ input:-webkit-autofill:active {
    outline: none;
 }
 
-.fg-pass {
+.link {
    text-decoration: none;
    display: inline-block;
    width: 100%;
@@ -153,6 +153,12 @@ input::placeholder {
    border: 10px solid rgb(153, 14, 107);
    height: 100vh;
    width: 75%;
+}
+
+.error {
+   color: rgb(25, 255, 0);
+   margin-top: 0px;
+   margin-bottom: 1.5em;
 }
 
 
