@@ -1,19 +1,24 @@
 import React from 'react'
+import Profile from '../Images/user.png'
 
 class Conversation extends React.Component {
   render () {
     return (
       <div className='conv'>
+        <div className='left-conv'>
+          <img className='prof-pic' src={Profile} />
+          <div className='online' />
+        </div>
         <div className='mid-conv'>
-          <span>
+          <span className='name'>
             {this.props.name}
           </span>
-          <span>
+          <span className='message'>
             {this.props.latestMessage}
           </span>
         </div>
-        <div>
-          <span>
+        <div className='right-conv'>
+          <span className='unseen'>
             {this.props.numOfUnseen}
           </span>
         </div>

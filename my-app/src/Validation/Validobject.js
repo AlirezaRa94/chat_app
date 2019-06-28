@@ -24,8 +24,8 @@ var ValidObject = {
       message: '^Please enter your password.'
     },
     length: {
-      minimum: 6,
-      message: '^Your password must be at least 6 characters.'
+      minimum: 5,
+      message: '^Your password must be at least 5 characters.'
     }
   }
 }

@@ -1,7 +1,9 @@
 import React from 'react'
 import logo from '../Images/icon.png'
 import validate from '../Validation/ValidateFunction'
+import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { baseUrl } from '../Constants/Config.json'
 
 class Login extends React.Component {
   constructor (props) {
@@ -26,6 +28,16 @@ class Login extends React.Component {
     error.username = usernameError
     error.password = passwordError
     this.setState({ error })
+    axios.post('https://reqres.in/api/register', {
+      email: this.state.username,
+      password: this.state.password
+    })
+      .then(function (response) {
+        console.log(response)
+      })
+      .catch(function (error) {
+        console.log(error.response)
+      })
   }
   render () {
     return (

@@ -1,4 +1,5 @@
 import React from 'react'
+import icon from '../Images/icon.png'
 import Conversation from './Conversation'
 
 class ConversationList extends React.Component {
@@ -32,6 +33,18 @@ class ConversationList extends React.Component {
   render () {
     return (
       <div className='convlist'>
+        <div className='top-conv'>
+          <img className='conv-logo' src={icon} />
+          <i className='fas fa-plus-square' />
+          <i className='fas fa-ellipsis-v' />
+        </div>
+        <div className='search-container'>
+          <i className='fas fa-search' />
+          <input
+            className='search'
+            placeholder='Search Here...'
+          />
+        </div>
         {this.state.ConversationList.map((conv, index) => {
           return (
             <Conversation

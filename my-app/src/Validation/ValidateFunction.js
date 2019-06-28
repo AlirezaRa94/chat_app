@@ -20,7 +20,6 @@ function validate (fieldName, value) {
   // the variable result hold the error massage of the
   const result = Validatejs(formValues, formFields)
   // If there is an error message, return it!
-  console.log('1', result)
   if (result) {
     return result[fieldName][0]
   }
