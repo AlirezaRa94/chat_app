@@ -20,9 +20,10 @@ class ChatScreen extends React.Component {
     }
   }
   render () {
+    console.log('props::', this.props)
     return (
       <div className='chat-screen'>
-        {this.state.messages.map((item, index) => {
+        {this.props.messages.map((item, index) => {
           if (item.id === 1) {
             return (
               <div key={index} className='sender'>
@@ -32,13 +33,13 @@ class ChatScreen extends React.Component {
                   </span>
                   <div className='chat-space' />
                 </div>
-                <img className='chat-prof-pic' src={Profile} />
+                <img className='chat-prof-pic' src={Profile} alt='' />
               </div>
             )
           } else {
             return (
               <div key={index} className='receiver'>
-                <img className='chat-prof-pic' src={Profile} />
+                <img className='chat-prof-pic' src={Profile} alt='' />
                 <div className='text-container'>
                   <span className='text-receiver'>
                     {item.message}

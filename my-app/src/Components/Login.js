@@ -3,7 +3,6 @@ import logo from '../Images/icon.png'
 import validate from '../Validation/ValidateFunction'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import { baseUrl } from '../Constants/Config.json'
 
 class Login extends React.Component {
   constructor (props) {
@@ -43,7 +42,7 @@ class Login extends React.Component {
     return (
       <div className='login-page'>
         <div className='container'>
-          <img className='logo' src={logo} />
+          <img className='logo' src={logo} alt='' />
           <div className='input-container'>
             <i className='fa fa-user' />
             <input

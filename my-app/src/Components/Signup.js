@@ -44,7 +44,7 @@ class Signup extends React.Component {
     return (
       <div className='signup-page'>
         <div className='container'>
-          <img className='logo' src={logo} />
+          <img className='logo' src={logo} alt='' />
           <div className='input-container'>
             <i className='fa fa-user' />
             <input

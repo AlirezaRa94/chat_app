@@ -230,6 +230,14 @@ input:-webkit-autofill:active {
    color: #bc2d7b;
 }
 
+.fa-plus-square {
+   cursor: pointer;
+}
+
+.fa-ellipsis-v {
+   cursor: pointer;
+}
+
 .search-container {
    background: rgba(27,142,105,0.75);
    display: flex;
@@ -347,6 +355,7 @@ input:-webkit-autofill:active {
    border-radius: 50%;
    background: linear-gradient(0deg, #0BA360, #3CBA92);
    margin: 0px 5px;
+   cursor: pointer;
 }
 
 .fa-video {
@@ -392,6 +401,7 @@ input:-webkit-autofill:active {
    align-items: center;
    justify-content: center;
    margin: 5px 20px 5px 10px;
+   cursor: pointer;
 }
 
 .margin {
@@ -404,6 +414,11 @@ input:-webkit-autofill:active {
    align-items: center;
    justify-content: center;
    margin: 5px 10px;
+   position: relative;
+}
+
+.margin {
+   cursor: pointer;
 }
 
 .fa-location-arrow {
@@ -431,7 +446,7 @@ input:-webkit-autofill:active {
    flex-direction: row;
    justify-content: flex-start;
    align-items: flex-end;
-   margin: 10px 20px;
+   margin: 0px 20px;
 }
 
 .sender {
@@ -439,7 +454,7 @@ input:-webkit-autofill:active {
    flex-direction: row;
    justify-content: flex-end;
    align-items: flex-end;
-   margin: 10px 20px;
+   margin: 0px 20px;
 }
 
 .text-container {

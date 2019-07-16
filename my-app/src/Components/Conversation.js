@@ -6,7 +6,7 @@ class Conversation extends React.Component {
     return (
       <div className='conv'>
         <div className='left-conv'>
-          <img className='prof-pic' src={Profile} />
+          <img className='prof-pic' src={Profile} alt='' />
           <div className='online' />
         </div>
         <div className='mid-conv'>
