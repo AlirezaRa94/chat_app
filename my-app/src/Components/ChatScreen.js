@@ -20,7 +20,6 @@ class ChatScreen extends React.Component {
     }
   }
   render () {
-    console.log('props::', this.props)
     return (
       <div className='chat-screen'>
         {this.props.messages.map((item, index) => {

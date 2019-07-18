@@ -150,6 +150,14 @@ input:-webkit-autofill:active {
    flex-direction: row;
    justify-content: flex-start;
    align-items: center;
+   cursor: pointer;
+}
+
+.conv:hover {
+   -ms-transform: scale(1.06); /* IE 9 */
+   -webkit-transform: scale(1.06); /* Safari 3-8 */
+   transform: scale(1.06);
+   background: rgba(27,142,105,0.75);
 }
 
 .left-conv {
@@ -205,7 +213,17 @@ input:-webkit-autofill:active {
    width: 10px;
    height: 10px;
    border-radius: 50%;
-   background-color: #bc2d7b;
+   background-color: #77e004;
+   position: absolute;
+   right: 10px;
+   top: 60px;
+}
+
+.offline {
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   background-color: #e81123;
    position: absolute;
    right: 10px;
    top: 60px;
@@ -336,7 +354,15 @@ input:-webkit-autofill:active {
    width: 10px;
    height: 10px;
    border-radius: 50%;
-   background-color: #bc2d7b;
+   background-color: #77e004;
+   margin: 0px 5px;
+}
+
+.offline-chat {
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   background-color: #e81123;
    margin: 0px 5px;
 }
 

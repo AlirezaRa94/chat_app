@@ -22,14 +22,26 @@ class Chat extends React.Component {
     }
   }
 
+  handleOnline () {
+    if (this.props.online === true) {
+      return (
+        <div className='online-chat' />
+      )
+    } else {
+      return (
+        <div className='offline-chat' />
+      )
+    }
+  }
+
   render () {
     return (
       <div className='chat'>
         <div className='top-chat'>
           <div className='left-top-chat'>
-            <div className='online-chat' />
+            {this.handleOnline()}
             <p className='name-chat'>
-              Alireza Raei
+              {this.props.name}
             </p>
           </div>
           <div className='call'>
