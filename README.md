@@ -1,2 +1,2 @@
-# React
-This is a simple chat application.
+# Chat Application
+This is a simple user interface for a chat application using React.
